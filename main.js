@@ -26,13 +26,13 @@ let counter = setInterval(() => {
 let section = document.querySelector(".our-skills");
 let spans = document.querySelectorAll(".prog span");
 
-window.onscroll = function () {
+window.addEventListener("scroll", () => {
   if (window.scrollY >= section.offsetTop) {
     spans.forEach((span) => {
       span.style.width = span.dataset.wid;
     });
   }
-};
+});
 
 //Increase Numbers On Scrolling
 
@@ -40,14 +40,14 @@ let stats = document.querySelector(".stats");
 let numbers = document.querySelectorAll(".stats .number");
 let started = false; // Function Started ? No
 
-window.onscroll = function () {
+window.addEventListener("scroll", () => {
   if (scrollY >= stats.offsetTop + -100) {
     if (!started) {
       numbers.forEach((num) => startCount(num));
     }
     started = true;
   }
-};
+});
 
 function startCount(el) {
   let goal = el.dataset.goal;
@@ -71,13 +71,14 @@ window.addEventListener("scroll", () => {
 
 //scroll up
 let scrl = document.querySelector(".up");
-window.onscroll = () => {
+window.addEventListener("scroll", () => {
   if (window.scrollY >= 900) {
     scrl.style.display = "block";
   } else {
     scrl.style.display = "none";
   }
-};
+});
+
 scrl.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
